@@ -42,6 +42,14 @@ Make sure that you add terraform.tvars in .gitignore file
 ```
   python3 main.py
 ```
+![Alt text](images/Output.png)
+
+### 4. Destroy infrastructure using Terraform
+```
+  terraform destroy
+```
+
+
 
 
 
