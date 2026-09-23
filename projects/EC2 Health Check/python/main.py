@@ -30,4 +30,4 @@ schedule.every(5).seconds.do(check_ec2_health)
 #schedule.every().monday.at("09:00").do(check_ec2_health)
 
 while True:
-    schedule.run_pending() #This will run the scheduled jobs
+    schedule.run_pending() # This will run the scheduled jobs
