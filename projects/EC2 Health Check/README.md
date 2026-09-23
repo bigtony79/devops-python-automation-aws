@@ -36,11 +36,12 @@ Before starting this project, ensure you have the following:
   - Python
   - AWS EC2
 
-Install the required Python dependency
+Install the required Python dependencies
 ```
   python -m venv .venv
   source ~/.venv/bin/activate
   pip3 install boto3
+  pip3 install schedule
 ```
 
 Verify AWS authentication
