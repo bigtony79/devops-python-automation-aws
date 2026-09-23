@@ -2,6 +2,10 @@
 # Health Check: EC2 Status Checks
 
 ## Overview
+This project demonstrates how to monitor the health and status of Amazon EC2 instances using Python and the AWS SDK for Python (Boto3). Infrastructure is provisioned using Terraform, which creates three EC2 instances within AWS. A Python script then retrieves the instance state and status check information directly from AWS and displays the results in the console.
+
+The project is extended to perform continuous health monitoring by periodically checking EC2 instance statuses at configurable intervals. This provides hands-on experience with infrastructure automation, cloud resource monitoring, and integration between Terraform and Python.
+
 
 ## Technologies Used
 * Python
@@ -15,6 +19,39 @@
 * Extend the Python script to continuously check the status of EC2 Instances in a specific interval
 
 ## Pre-requisites
+Before starting this project, ensure you have the following:
+* An AWS account
+* AWS CLI installed and configured with appropriate credentials
+* Terraform installed
+* Python 3 installed
+* Boto3 Python package installed
+* An SSH key pair for EC2 access
+* IAM permissions to create and manage:
+  -  VPCs
+  -  Subnets
+  -  Security Groups
+  -  EC2 Instances
+* Basic understanding of:
+  - Terraform
+  - Python
+  - AWS EC2
+
+Install the required Python dependency
+```
+  python -m venv .venv
+  source ~/.venv/bin/activate
+  pip3 install boto3
+```
+
+Verify AWS authentication
+```
+  aws sts get-caller-identity
+```
+
+Verify Terraform Installation
+```
+  terraform version
+```
 
 ## Steps
 
@@ -49,8 +86,16 @@ Make sure that you add terraform.tvars in .gitignore file
   terraform destroy
 ```
 
-
-
-
-
 ## Learning Outcomes
+By completing this project, you will learn how to:
+* Provision AWS infrastructure using Terraform
+* Create and manage EC2 instances programmatically
+* Configure Terraform variables using a separate terraform.tfvars file
+* Authenticate to AWS using the AWS CLI and SDKs
+* Use the Boto3 library to interact with AWS services
+* Retrieve EC2 instance state information using Python
+* Perform EC2 status and health checks programmatically
+* Implement continuous monitoring with Python loops and time-based intervals
+* Automate cloud infrastructure validation tasks
+* Follow Infrastructure as Code (IaC) best practices by separating configuration from source code
+* Protect sensitive configuration data by excluding terraform.tfvars from version control
