@@ -9,7 +9,7 @@
 * Terraform
 
 ## Project Description
-* Create EC2 Instances with Terraform
+* Create 3 EC2 Instances with Terraform
 * Write a Python script that fetches statuses of EC2 Instances and prints to the console
 * Extend the Python script to continuously check the status of EC2 Instances in a specific interval
 
