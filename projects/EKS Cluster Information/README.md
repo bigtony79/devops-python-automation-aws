@@ -48,6 +48,7 @@ The script connects to AWS EKS, retrieves all available clusters in the configur
       export AWS_DEFAULT_REGION=us-east-1
   ```
 * Required IAM permissions
+
   The user or role executing the script should have permissions to list and describe clusters in EKS
 
 ## Steps
