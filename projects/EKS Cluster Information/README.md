@@ -6,6 +6,7 @@
 * Python
 * Boto3
 * AWS EKS
+* Terraform
 
 ## Project Description
 * Write a Python script that fetches and displays EKS cluster status and information
