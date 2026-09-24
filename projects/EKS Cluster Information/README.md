@@ -29,13 +29,7 @@ The script connects to AWS EKS, retrieves all available clusters in the configur
   ```
     python3 --version
   ```
-* Boto3
-  Install the AWS SDK for python
-  ```
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install boto3
-  ```
+* Boto3 
 * AWS Credentials
   Configure credentials locally using the AWS CLI:
   ```
@@ -53,5 +47,55 @@ The script connects to AWS EKS, retrieves all available clusters in the configur
 
 ## Steps
 
+### 1. Provision EKS Infrastructure
+Use Terraform to deploy an EKS cluster
+
+Initialize Terraform:
+```
+  terraform init
+```
+
+Review the execution plan:
+```
+  terraform plan
+```
+
+Deploy the infrastructure:
+```
+  terraform apply
+```
+
+### 2. Install Project Dependencies
+
+ Install Boto3
+  ```
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install boto3
+  ```
+
+### 3. Execute the script
+Run the script: 
+```
+  python3 eks_status_checks.py
+```
+The script will:
+  * Query EKS for all clusters
+  * Retrieve detailed information for each cluster
+  * Display the Kubernetes version
+  * Display the cluster status
+  * Display the cluster endpoint.
+
+![Alt text](images/output.png)
+
 ## Learning outcomes
+By completing this project, you will learn how to:
+* Use Boto3 to interact with AWS services programmatically.
+* Authenticate Python applications with AWS.
+* Retrieve and process EKS cluster information.
+* Work with AWS APIs using Python.
+* Use Terraform to provision Kubernetes infrastructure in AWS.
+* Build operational health-check and inventory scripts.
+* Understand key EKS cluster attributes such as version, status, and endpoint configuration.
+* Integrate infrastructure provisioning and operational validation into an Infrastructure as Code (IaC) workflow.
 
