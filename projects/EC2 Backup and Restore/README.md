@@ -54,6 +54,11 @@ Run the script to create snapshots for all the volumes with a minute interval:
 ```
   python3 ec2_volume_backup.py
 ```
+The script will perform the following actions:
+1. Create a list of volumes
+2. For each volume item in the list, create a new snapshot
+3. The Script is scheduled to run for every minute. 
+
 Insert screenshot of script output
 Now the console should show new snapshots created in minute interval for all attached volumes to the EC2 instances
 INSERT Screenshot
