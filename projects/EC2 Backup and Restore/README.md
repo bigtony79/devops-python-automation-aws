@@ -16,7 +16,7 @@
 
 ## Steps
 
-# 1. Create AWS infrastructure using Terraform
+### 1. Create AWS infrastructure using Terraform
 Using Terraform, we will create 3 EC2 Instances which will have Volume tags set to **'prod', 'QA' and 'dev'**.
 
 Define terraform.tfvars file
@@ -47,7 +47,7 @@ Deploy the infrastructure
 ```
 INSERT SCREENSHOTS showing EC2 instances along with Volumes with their assigned tags
 
-## 2. Create Snapshots from volumes attached to EC2 Instances
+### 2. Create Snapshots from volumes attached to EC2 Instances
 Before executing the script **ec2_volume_backup.py**,  you can check for Snapshots from the AWS console. It should be empty.
 INSERT screenshot showing empty snapshots
 Run the script to create snapshots for all the volumes with a minute interval:
