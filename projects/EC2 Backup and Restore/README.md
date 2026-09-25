@@ -95,54 +95,107 @@ Deploy the infrastructure
 INSERT SCREENSHOTS showing EC2 instances along with Volumes with their assigned tags
 
 ### 2. Create Snapshots from volumes attached to EC2 Instances
-Before executing the script **ec2_volume_backup.py**,  you can check for Snapshots from the AWS console. It should be empty.
+Before executing the script **ec2_volume_backup.py**,  verify that no snapshots currently exist.
+
 INSERT screenshot showing empty snapshots
-Run the script to create snapshots for all the volumes with a minute interval:
+
+Execute the backup script:
 ```
   python3 ec2_volume_backup.py
 ```
+
 The script will perform the following actions:
-1. Create a list of volumes
-2. For each volume item in the list, create a new snapshot
-3. The Script is scheduled to run for every minute. 
+1. Retrieves all EBS volumes in the AWS account.
+2. Iterates through each volume.
+3. Creates a new snapshot for every volume discovered.
+4. Prints the snapshot creation response.
+5. Executes automatically every minute using the Python Schedule library. ec2_volume_backup
 
 Insert screenshot of script output
-Now the console should show new snapshots created in minute interval for all attached volumes to the EC2 instances
+
+After several minutes, additional snapshots should appear in the AWS console.
+
 INSERT Screenshot
 
-For real production use cases, the schedule interval should be set to something much longer than a single minute.
+**Note:** The one-minute interval is intended only for demonstration purposes. Production environments typically schedule backups hourly, daily, or according to organizational recovery objectives.
 
-### 3. Remove the oldest Snapshots except for the latest 2 copies for a specific volume
-The script **ec2_snapshots_cleanup.py** will retain the latest 2 snapshots of the 'prod' volume and remove the rest
-Execute the script
+### 3. Remove old snapshots and retain the latest two copies
+The script **ec2_snapshots_cleanup.py** retains only the two most recent snapshots for volumes tagged as **prod** and deletes all older snapshots. 
+
+Execute the script:
 ```
   python3 ec2_snapshots_cleanup.py
 ```
 The script will do the following:
-1. Filter the volumes list with the tag 'prod'
-2. Filter the snapshots list with the volumes assigned with the tag 'prod'
-3. Print Unsorted list of snapshots (for demo purpose)
-   INSERT SCREENSHOT
-5. Sort the snapshots based on the key value 'StartTime' in descending order   
-7. Print the sorted the list of snapshots in descending order based on the key value for 'StartTime'
-   INSERT SCREENSHOT
-9. Delete the oldest snapshots and retain the first 2 snapshots
-    INSERT SCREENSHOT
+1. Retrieves volumes with the Name tag value prod.
+2. Retrieves snapshots associated with each matching volume.
+3. Displays an unsorted list of snapshots.
+4. Sorts snapshots by the StartTime attribute in descending order (newest first).
+5. Displays the sorted snapshot list.
+6. Retains the two newest snapshots.
+7. Deletes all remaining older snapshots.
 
-### 4. Restore and attach a new volume using the latest snapshot for a particular instance
+INSERT SCREENSHOT
 
-Replace the value of the ```instance_id``` variable with your desired instance and run the following script:
+Unsorted Snapshot List
 
+INSERT SCREENSHOT
+
+Sorted Snapshot List
+
+INSERT SCREENSHOT
+
+Snapshot Deletion Output
+
+INSERT SCREENSHOT
+
+AWS Console Showing Only Two Remaining Snapshots
+
+
+### 4. Restore a volume From the latest snapshot
+
+Replace the value of the instance_id variable in the script with the target EC2 instance ID before running the restore operation - **ec2_restore_volume_snapshot.py**
+
+Execute the script:
 ```
   python3 ec2_restore_volume_snapshot.py
 ```
+
 The script **ec2_restore_volume_snapshot.py** will perform the following actions:
-1. Select the volume(s) attached to the desired instance and save it in a list called **volumes**.
-2. Using the list from #1, get all snapshots created for the specified volume(s) and save it in a separate list called **snapshots**.
-3. Sort the **snapshots** lists using the key value for 'StartTime' in descending order. Save the result in a new list called **latest_snapshots**.
-4. Create a new volume from the latest snapshot by selecting the first item from the list **latest_snapshots**.
-5. Attach the new volume to the desired EC2 instance 
-   
+1. Retrieves all volumes attached to the specified EC2 instance.
+2. Selects the first attached volume.
+3. Retrieves all snapshots associated with that volume.
+4. Sorts snapshots by StartTime in descending order.
+5. Selects the most recent snapshot.
+6. Creates a new EBS volume from the latest snapshot.
+7. Appends the suffix-restored to the new volume's Name tag.
+8. Waits until the new volume becomes available.
+9. Attaches the restored volume to the EC2 instance as /dev/xvdb
+
+INSERT SCREENSHOT
+
+Volume Creation Process
+
+INSERT SCREENSHOT
+
+New Restored Volume
+
+INSERT SCREENSHOT
+
+Restored Volume Attached to EC2 Instance
 
 
 ## Learning outcomes
+
+By completing this project, you will learn how to:
+
+* Provision AWS infrastructure using Terraform.
+* Create and manage EBS volumes attached to EC2 instances.
+* Use Boto3 to interact with AWS services programmatically.
+* Automate EBS snapshot creation using Python.
+* Implement snapshot retention policies to reduce storage costs.
+* Sort AWS resources using Python lambda functions and list operations.
+* Restore EBS volumes from snapshots.
+* Attach restored volumes to running EC2 instances.
+* Build foundational disaster recovery and backup automation workflows.
+* Apply Infrastructure as Code (IaC) and automation principles in AWS environments.
