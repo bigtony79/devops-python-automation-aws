@@ -92,8 +92,11 @@ Deploy the infrastructure
 ```
   terraform apply
 ```
-INSERT SCREENSHOTS showing EC2 instances along with Volumes with their assigned tags
+
+EC2 Instances console: 
 ![alt text](images/ec2-console-screenshot.png)
+
+Newly created EBS Volumes:
 ![alt text](images/EBS-volumes-screenshot-1.png)
 
 ### 2. Create Snapshots from volumes attached to EC2 Instances
