@@ -94,6 +94,7 @@ Deploy the infrastructure
 ```
 INSERT SCREENSHOTS showing EC2 instances along with Volumes with their assigned tags
 ![alt text](images/ec2-console-screenshot.png)
+![alt text](images/EBS-volumes-screenshot-1.png)
 
 ### 2. Create Snapshots from volumes attached to EC2 Instances
 Before executing the script **ec2_volume_backup.py**,  verify that no snapshots currently exist.
