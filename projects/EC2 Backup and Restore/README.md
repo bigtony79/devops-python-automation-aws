@@ -102,7 +102,8 @@ Deploy the infrastructure
 ### 2. Create Snapshots from volumes attached to EC2 Instances
 Before executing the script **ec2_volume_backup.py**,  verify that no snapshots currently exist.
 
-INSERT screenshot showing empty snapshots
+#### EBS Snapshots Console
+![alt text](images/EBS-snapshots-screenshot-1.png)
 
 Execute the backup script:
 ```
