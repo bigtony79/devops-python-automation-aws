@@ -117,11 +117,11 @@ The script will perform the following actions:
 4. Prints the snapshot creation response.
 5. Executes automatically every minute using the Python Schedule library. ec2_volume_backup
 
-Insert screenshot of script output
+![alt text](images/EBS-snapshots-screenshot-2.png)
 
 After several minutes, additional snapshots should appear in the AWS console.
 
-INSERT Screenshot
+![alt text](images/EBS-snapshots-screenshot-3.png)
 
 **Note:** The one-minute interval is intended only for demonstration purposes. Production environments typically schedule backups hourly, daily, or according to organizational recovery objectives.
 
