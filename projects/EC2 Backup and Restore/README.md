@@ -77,7 +77,20 @@ The script will do the following:
 9. Delete the oldest snapshots and retain the first 2 snapshots
     INSERT SCREENSHOT
 
-### 4. 
+### 4. Restore and attach a new volume using the latest snapshot for a particular instance
+
+Replace the value of the ```instance_id``` variable with your desired instance and run the following script:
+
+```
+  python3 ec2_restore_volume_snapshot.py
+```
+The script **ec2_restore_volume_snapshot.py** will perform the following actions:
+1. Select the volume(s) attached to the desired instance and save it in a list called **volumes**.
+2. Using the list from #1, get all snapshots created for the specified volume(s) and save it in a separate list called **snapshots**.
+3. Sort the **snapshots** lists using the key value for 'StartTime' in descending order. Save the result in a new list called **latest_snapshots**.
+4. Create a new volume from the latest snapshot by selecting the first item from the list **latest_snapshots**.
+5. Attach the new volume to the desired EC2 instance 
+   
 
 
 ## Learning outcomes
