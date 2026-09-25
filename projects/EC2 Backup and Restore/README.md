@@ -2,22 +2,69 @@
 
 ## Overview
 
+This project demonstrates how to automate Amazon EC2 volume backup, retention, and restoration activities using Python and the AWS SDK for Python (Boto3). Using Terraform, we will provision multiple EC2 instances and associated EBS volumes, create automated snapshots, implement a snapshot retention policy, and restore volumes from the most recent backup.
+
+The solution mimics common enterprise backup and disaster recovery workflows while introducing key AWS automation concepts such as infrastructure provisioning, snapshot management, scheduling, and volume restoration.
+
 ## Technologies used
 * Python
 * Boto3
-* AWS
+* AWS EC2
+* Terraform
 
 ## Project Description
-* Write a Python script that automates creating backups for EC2 Volumes
-* Write a Python script that cleans up old EC2 Volume snapshots
-* Write a Python script that restores EC2 Volumes
+* Provision AWS infrastructure using Terraform.
+* Automate EBS snapshot creation for EC2 volumes.
+* Implement a snapshot retention policy that removes old backups.
+* Restore EBS volumes from the latest available snapshot.
+* Attach restored volumes to running EC2 instances.
 
 ## Pre-requisites
+
+Before beginning this project, ensure the following requirements are met:
+
+### AWS Requirements
+* AWS Account
+* IAM User or Role with permissions to:
+  - Create and manage EC2 instances
+  - Create and manage EBS volumes
+  - Create and delete EBS snapshots
+  - Attach EBS volumes to EC2 instances
+
+### Software Requirements
+* Terraform installed
+* Python 3.x installed
+* AWS CLI installed and configured
+* Python Packages
+
+### Python Packages
+Install the required python libraries 
+```
+  python -m venv .venv
+  source ~/.venv/bin/activate
+  pip3 install boto3 schedule
+```
+
+### Configure AWS Credentials
+Verify that your AWS credentials are configured:
+```
+  aws configure
+```
+
+Verify access to AWS:
+```
+  aws sts get-caller-identity
+```
 
 ## Steps
 
 ### 1. Create AWS infrastructure using Terraform
-Using Terraform, we will create 3 EC2 Instances which will have Volume tags set to **'prod', 'QA' and 'dev'**.
+
+Using Terraform, we will create three EC2 instances with attached EBS volumes.
+The volumes will be assigned the following Name tags:
+* prod
+* qa
+* dev
 
 Define terraform.tfvars file
 ```
