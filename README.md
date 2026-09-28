@@ -11,4 +11,5 @@ The primary goal of this repository is to demonstrate how Python can be used to 
 * [Introduction to the Boto3 library in Python](notes/introduction_Boto_library.md)
 
 ## Projects
+* [EC2 Health Checks](projects/EC2 Health Check/README.md)
 
