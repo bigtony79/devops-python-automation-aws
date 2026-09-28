@@ -188,6 +188,13 @@ Restored Volume Attached to EC2 Instance
 
 ![alt text](images/Snapshot-restore-screenshot-3.png)
 
+### 4. Destroy infrastructure 
+When finished, remove the resources:
+```
+  terraform destroy
+```
+You will also need to delete the snapshots and restored volume from the AWS console.
+
 ## Learning outcomes
 
 By completing this project, you will learn how to:
