@@ -152,7 +152,7 @@ Snapshot Deletion Output
 
 ![alt text](images/Snapshot-cleanup-screenshot-3.png)
 
-AWS Console Showing Only Two Remaining Snapshots for the Prod volume. Please note that the script did not delete any snapshots for both 'qa' and 'dev' volumes. 
+AWS Console Showing Only Two Remaining Snapshots for the Prod volume. 
 
 ![alt text](images/Snapshot-cleanup-screenshot-4.png)
 
