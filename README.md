@@ -7,9 +7,10 @@ This repository contains a collection of AWS automation projects and technical n
 The primary goal of this repository is to demonstrate how Python can be used to automate common cloud operations, reduce manual effort, and improve operational efficiency within AWS environments.
 
 ## Notes
-* [Terraform vs Python](notes/Terraform-vs-Python.md)
-* [Introduction to the Boto3 library in Python](notes/introduction_Boto_library.md)
+1. [Terraform vs Python](notes/Terraform-vs-Python.md)
+2. [Introduction to the Boto3 library in Python](notes/introduction_Boto_library.md)
 
 ## Projects
-* [EC2 Health Checks](projects/EC2 Health Check/README.md)
+1. [EC2 Health Checks](projects/EC2 Health Check)
+2. [Node.js Deployment](projects/Nodejs-deployment)  
 
