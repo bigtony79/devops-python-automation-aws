@@ -141,22 +141,20 @@ The script will do the following:
 6. Retains the two newest snapshots.
 7. Deletes all remaining older snapshots.
 
-INSERT SCREENSHOT
-
 Unsorted Snapshot List
-
-INSERT SCREENSHOT
+![alt text](images/Snapshot-cleanup-screenshot-1.png)
 
 Sorted Snapshot List
 
-INSERT SCREENSHOT
+![alt text](images/Snapshot-cleanup-screenshot-2.png)
 
 Snapshot Deletion Output
 
-INSERT SCREENSHOT
+![alt text](images/Snapshot-cleanup-screenshot-3.png)
 
 AWS Console Showing Only Two Remaining Snapshots
 
+![alt text](images/Snapshot-cleanup-screenshot-4.png)
 
 ### 4. Restore a volume From the latest snapshot
 
