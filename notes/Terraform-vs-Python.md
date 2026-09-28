@@ -39,5 +39,5 @@ While Terraform is the preferred tool for provisioning and managing infrastructu
 
 This project uses Terraform to provision and manage AWS infrastructure while leveraging Python (Boto3) to perform operational and administrative tasks that require custom logic and API-level access. This combination provides the benefits of infrastructure consistency through Terraform and the flexibility of automation through Python.
 
-** Terraform: **  Infrastructure provisioning and lifecycle management
- ** Python/Boto3: ** Automation, reporting, operational tasks, and custom workflows
+**Terraform:**  Infrastructure provisioning and lifecycle management
+ **Python/Boto3:** Automation, reporting, operational tasks, and custom workflows
