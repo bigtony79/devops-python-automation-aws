@@ -24,7 +24,7 @@ def check_ec2_health():
         print(f"Instance {status['InstanceId']} is {state}, Instance Status: {inst_status}, System Status: {sys_status}")
     print("##########################################################\n")
 
-# Write a scheduled health check using scheduler library to run the health check every 5 minutes
+# Write a scheduled health check using scheduler library to run the health check every 5 seconds
 schedule.every(5).seconds.do(check_ec2_health)
 #Example of setting a specific time for the health check
 #schedule.every().monday.at("09:00").do(check_ec2_health)
