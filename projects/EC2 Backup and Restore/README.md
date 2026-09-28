@@ -176,18 +176,17 @@ The script **ec2_restore_volume_snapshot.py** will perform the following actions
 8. Waits until the new volume becomes available.
 9. Attaches the restored volume to the EC2 instance as /dev/xvdb
 
-INSERT SCREENSHOT
-
 Volume Creation Process
 
-INSERT SCREENSHOT
+![alt text](images/Snapshot-restore-screenshot-1.png)
 
 New Restored Volume
 
-INSERT SCREENSHOT
+![alt text](images/Snapshot-restore-screenshot-2.png)
 
 Restored Volume Attached to EC2 Instance
 
+![alt text](images/Snapshot-restore-screenshot-3.png)
 
 ## Learning outcomes
 
