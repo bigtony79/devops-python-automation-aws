@@ -12,5 +12,5 @@ The primary goal of this repository is to demonstrate how Python can be used to 
 
 ## Projects
 1. [EC2 Health Checks](projects/EC2%20Health%20Check/README.md)
-2. [Node.js Deployment](projects/EC2 Health Check)    
+2. [EC2 Tags](projects/EC2%20Tags/README.md)
 
