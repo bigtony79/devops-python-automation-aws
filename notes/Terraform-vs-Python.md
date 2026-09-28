@@ -12,7 +12,7 @@ Terraform is an Infrastructure as Code (IaC) tool designed to provision and mana
 * Uses a high-level, human-readable configuration language (HCL) that is easier to learn and maintain.
 * Excellent for infrastructure provisioning and lifecycle management.
 
-##Python (Boto3)
+## Python (Boto3)
 
 Boto3 is the AWS SDK for Python and provides direct access to AWS APIs.
 
